@@ -1,51 +1,52 @@
-//Implementando uma Pilha Dinâmica
+/* Implementação de uma estrutura de dados do tipo "Pilha Dinâmica", utilizando uma lista encadeada. 
 
-class Pilha {
-  constructor() {
-    this.itens = [];
-  }
+Na implementação, a classe "No" representa um nó da lista, contendo um valor e uma referência para o próximo nó. A classe "PilhaDinamica" possui métodos para verificar se a pilha está vazia, adicionar um elemento (push), remover o elemento do topo (pop) e imprimir os elementos da pilha. */
 
-  // Adiciona um elemento no topo da pilha
-  push(elemento) {
-    this.itens.push(elemento);
-  }
-
-  // Remove e retorna o elemento do topo da pilha
-  pop() {
-    if (this.isEmpty()) {
-      return "A pilha está vazia";
+class No {
+    constructor(valor) {
+        this.valor = valor
+        this.proximo = null
     }
-    return this.itens.pop();
-  }
-
-  // Retorna o elemento no topo sem removê-lo
-  peek() {
-    if (this.isEmpty()) {
-      return "A pilha está vazia";
-    }
-    return this.itens[this.itens.length - 1];
-  }
-
-  // Verifica se a pilha está vazia
-  isEmpty() {
-    return this.itens.length === 0;
-  }
-
-  // Retorna o tamanho da pilha
-  tamanho() {
-    return this.itens.length;
-  }
-
-  // Limpa a pilha
-  limpar() {
-    this.itens = [];
-  }
 }
 
-// Testando a pilha
-const pilha = new Pilha();
-pilha.push(10);  // Adiciona 10
-pilha.push(20);  // Adiciona 20
-console.log(pilha.peek());  // Retorna 20
-pilha.pop();  // Remove o 20
-console.log(pilha.tamanho());  // Retorna 1
+class PilhaDinamica {
+    constructor() {
+        this.topo = null
+    }
+
+    isEmpty() {
+        return this.topo === null
+    }
+
+    push(valor) {
+        const novoNo = new No(valor)
+
+        novoNo.proximo = this.topo
+        this.topo = novoNo
+    }
+
+    pop() {
+        if (this.isEmpty()) {
+            console.log("Pilha vazia")
+            return null
+        }
+
+        const valorRemovido = this.topo.valor
+
+        this.topo = this.topo.proximo
+
+        return valorRemovido
+    }
+
+    print() {
+        let atual = this.topo
+        let resultado = []
+
+        while (atual !== null) {
+            resultado.push(atual.valor)
+            atual = atual.proximo
+        }
+
+        console.log(resultado)
+    }
+}
