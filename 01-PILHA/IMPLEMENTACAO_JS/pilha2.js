@@ -1,4 +1,4 @@
-//Implementando uma estrutura de dados do tipo Pilha
+//Implementação de uma estrutura de dados do tipo Pilha, utilizando um array para armazenar os elementos. A pilha tem um tamanho máximo definido no construtor, e os métodos push, pop, peek, isEmpty, isFull, tamanho e limpar são implementados para manipular a pilha. O código também inclui testes para verificar o funcionamento da pilha.
 
 class Pilha {
     constructor(tamanhoMaximo = 5) {
