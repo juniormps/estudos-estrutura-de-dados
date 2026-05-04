@@ -1,4 +1,4 @@
-//Implementando uma Pilha Estática
+//Implementando uma estrutura de dados do tipo Pilha
 
 class Pilha {
     constructor(tamanhoMaximo = 5) {
