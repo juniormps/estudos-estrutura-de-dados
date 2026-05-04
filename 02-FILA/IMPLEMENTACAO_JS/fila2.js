@@ -1,4 +1,4 @@
-//Implementação de uma Fila Estática
+//Implementação de uma Fila Estática, utilizando um array com tamanho fixo.
 
 class Fila {
     constructor(tamanhoMaximo = 5) {
