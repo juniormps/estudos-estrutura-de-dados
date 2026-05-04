@@ -1,4 +1,10 @@
-//Implementação de uma Fila Dinâmica
+/* Implementação de uma estrutura de dados do tipo "Fila Dinâmica", sem a utilização de uma lista encadeada.
+
+Este exemplo de implementação não é conceitualmente uma fila dinâmica, pois utiliza um array para armazenar os elementos e não uma lista encadeada. Porém, ela funciona como uma pilha dinâmica em javascript. 
+
+Entretanto, aqui, Embora seja uma implementação mais simples, deve-se levar em conta que a complexidade do operador "dequeue" (desenfileirar um elemento) é da ordem de O(n), enquanto em uma implementação com lista encadeada é da ordem de O(1). 
+
+Desta forma, a implementação com array é mais simples de entender e implementar, mas pode ser menos eficiente em termos de desempenho para operações frequentes. */
 
 class Fila {
   constructor() {
